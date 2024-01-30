@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style type="text/css">body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+thead th, tbody td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+thead th {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+audio {
+    width: 100%;
+}
+</style>
+</head>
+<body>
+<table border>
+<thead>
+<tr>
+<th>Name</th>
+<th>Songs</th>
+</tr>
+</thead>
+<tbody>
+<tr th:each="p:${play}">
+    <td th:text="${p.name}"></td>
+    <td>
+         <ul th:if="${p.s != null and not #lists.isEmpty(p.s)}">
+                        <li th:each="song: ${p.s}">
+                            <span th:text="${song.name}"></span>
+                            <audio controls>
+                                <source th:src="${song.link}" type="audio/mpeg"/>
+                            </audio>
+                        </li>
+                        </ul>
+    </td>
+</tr>
+
+</tbody>
+</table>
+
+</body>
+</html>

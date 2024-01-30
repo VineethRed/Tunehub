@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>@charset "ISO-8859-1";
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+form {
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Optional: Add some responsive styling */
+@media only screen and (max-width: 600px) {
+    form {
+        max-width: 100%;
+    }
+}
+</style>
+</head>
+<body>
+<form action="/register" method="post">
+        <label>UserName : </label> <input type="text"  placeholder="Name" name="username"/><br> <br>
+        <label>Email : </label><input type="email"  placeholder="email" name="email"/><br> <br>
+        <label>Password : </label><input type="password" name="password"/><br> <br>
+        <label>Gender : </label><input type="radio"  name="gender" value="male"/><label>Male</label><input type="radio"  name="gender"value="female"/><label>Female</label>
+        <input type="radio"  name="gender"value="others"/><label>Others</label><br><br>
+        <label>Role : </label> <input type="radio"  name="role" value="admin"/> <label>Admin</label> <input type="radio"  value="customer" name="role"/><label >Customer</label> <br> <br>
+        <label > Adress </label><input type="textarea"  name="adress" placeholder="adress"> <br> <br>
+        <input type="submit" value="register"/>
+    </form>
+</body>
+</html>
